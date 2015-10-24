@@ -1,20 +1,22 @@
-<br><br><br><br>
-<div class="row">
-  <div ng-repeat="item in category.items" class="col-sm-offset-1 col-sm-4">
-    <div class="panel panel-default">
-      <div class="panel-heading text-center">
-        <a href="#" ng-click="category.openItem(item.query)">
-          {{item.name}}
-        </a>
-      </div>
-      <div class="panel-body">
-        <div class="col-sm-5">
-          <a href="#" class="thumbnail">
-            <img src="http://vignette2.wikia.nocookie.net/drunken-peasants-podcast/images/0/09/TheTimeIsCena.jpg/revision/latest?cb=20150309003243" alt="...">
+<div class="container">
+  <br><br><br><br>
+  <div class="row">
+    <div ng-repeat="item in category.items" class="col-sm-offset-1 col-sm-4">
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <a href="/" ng-click="category.openItem(item.query)">
+            {{item.name}}
           </a>
         </div>
-        <div class="col-sm-7">
-          In a chutes and ladders steel cage death math. Popcorn, hotdogs, chainsaws, fireballs!
+        <div class="panel-body">
+          <div class="col-sm-5">
+            <a href="#" class="thumbnail">
+              <img src="http://vignette2.wikia.nocookie.net/drunken-peasants-podcast/images/0/09/TheTimeIsCena.jpg/revision/latest?cb=20150309003243" alt="...">
+            </a>
+          </div>
+          <div class="col-sm-7">
+            In a chutes and ladders steel cage death math. Popcorn, hotdogs, chainsaws, fireballs!
+          </div>
         </div>
       </div>
     </div>
