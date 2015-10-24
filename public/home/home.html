@@ -1,24 +1,31 @@
 <div ng-controller="homeController as home" class="container">
-  <br><br><br><br>
-  <div class="row">
+  <br><br><br><br><br><br>
+
     <div ng-repeat="category in home.categories" class="col-sm-offset-1 col-sm-4">
-      <div class="panel panel-default">
+      <div class="panel panel-custom">
         <div class="panel-heading text-center">
           <a href="#" ng-click="home.openCategory(category.query)">
-            {{category.name}}
+            <h3 class="panel-title">{{category.name}}</h3>
           </a>
         </div>
+
         <div class="panel-body">
-          <div class="col-sm-5">
-            <a href="#" class="thumbnail">
-              <img src="http://images4.fanpop.com/image/photos/18400000/john-cena-john-cena-18461375-331-388.jpg" alt="...">
+          <a href="#" class="thumbnail">
+            <table style = "width:100%">
+              <tr>
+                <td>
+                    <img src="http://images4.fanpop.com/image/photos/18400000/john-cena-john-cena-18461375-331-388.jpg" alt="..."style="width:auto; height:100px">
+                </td>
+                <td>
+                    Title:
+                    <br><br><br><br>
+                    Price:
+                </td>
+              </table>
             </a>
-          </div>
-          <div class="col-sm-7">
-            Hello this an excellent picture of the world famous John Cena in a spit-swapping make-out match.
-          </div>
         </div>
       </div>
+      <br><br>
     </div>
   </div>
 </div>
