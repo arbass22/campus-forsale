@@ -4,27 +4,33 @@ var mongoose = require('mongoose');
 var router = express.Router();
 
 var Book = require('./../database/models/book');
-mongoose.connect('mongodb://localhost/books');
 console.log("got into book handler");
 
 router.get('/:id', function(req, res) {
-  console.log('called get method');
+  mongoose.connect('mongodb://localhost/books');
   Book.findById(req.params.id, function(err, obj) {
-    if (err)
+    if (err) {
       res.json(err);
-    else
+    }
+    else {
       res.json(obj);
+    }
+    mongoose.disconnect();
   });
 });
 
 router.post('/', function(req, res) {
-  console.log("Called the post method");
+  mongoose.connect('mongodb://localhost/books');
+
   var book = new Book(req.body);
   book.save(function(err) {
-    if (err)
+    if (err) {
       res.json(err);
-    else
+    }
+    else {
       res.json(book);
+    }
+    mongoose.disconnect();
   });
 });
 
