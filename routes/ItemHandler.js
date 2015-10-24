@@ -36,11 +36,12 @@ router.post('/', function(req, res) {
 
 router.delete('/:id', function(req, res) {
   mongoose.connect('mongodb://localhost/items');
-  Item.findByIdAndRemove(req.params.id, {new:true}, function(err, obj) {
-    if (err)
-      res.json(err);
+  Item.findByIdAndRemove(req.params.id, function(err, obj) {
+    if (err || obj == null) {
+      res.send(false);
+    }
     else {
-      res.json(obj);
+      res.send(true);
     }
   mongoose.disconnect();
   });
