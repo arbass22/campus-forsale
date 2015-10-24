@@ -14,7 +14,7 @@ Item
 {
   category: "tickets",
   owner: "jekennedy@umass.edu",
-  name: "ZEDD Floor Seat Ticket",
+  title: "ZEDD Floor Seat Ticket",
   description: "Mint condition floor ticket!",
   pictures: [list of picture UIDs],
   price: "$40.00",
@@ -29,6 +29,7 @@ Book
   edition: 1,
   ISBN: 12334565,
   owner: "jekennedy@umass.edu",
+  price: "$69.69"
   condition: "Good",
   available: true
 }
