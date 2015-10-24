@@ -21,7 +21,6 @@ router.get('/:id', function(req, res) {
 
 router.post('/', function(req, res) {
   mongoose.connect('mongodb://localhost/books');
-
   var book = new Book(req.body);
   book.save(function(err) {
     if (err) {
@@ -29,6 +28,19 @@ router.post('/', function(req, res) {
     }
     else {
       res.json(book);
+    }
+    mongoose.disconnect();
+  });
+});
+
+router.delete('/:id', function(req, res) {
+  mongoose.connect('mongodb://localhost/books');
+  Book.findByIdAndRemove(req.params.id, function(err, obj) {
+    if (err) {
+      res.json(err);
+    }
+    else {
+      res.json(obj);
     }
     mongoose.disconnect();
   });
