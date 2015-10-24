@@ -6,7 +6,7 @@ angular.module('app')
     {name: "Dorm Supplies", query: ""}, {name: "Automobiles", query: ""}, {name: "Housing", query: ""}, {name: "Misc", query: ""}];
 
     home.openCategory = function(category){
-
+      console.log(category);
     };
 
   });
