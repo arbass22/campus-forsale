@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
 
 router.delete('/:id', function(req, res) {
   mongoose.connect('mongodb://localhost/books');
-  Book.findByIdAndRemove(req.params.id, function(err, obj) {
+  Book.findByIdAndRemove(req.params.id, {new:true}, function(err, obj) {
     if (err) {
       res.json(err);
     }
