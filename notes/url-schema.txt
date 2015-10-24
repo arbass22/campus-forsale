@@ -1,12 +1,12 @@
 REST Endpoints
 ---------------------------------------
-GET /item?category=tickets?price=$40.00
-POST /item or /book
-PUT /item/<uid> or /book/<uid>
+GET /api/item?category=tickets?price=$40.00
+POST /api/item or /api/book
+PUT /api/item/<uid> or /api/book/<uid>
   {
     fieldToChange: "newValue"
   }
-DELETE /item/<uid>
+DELETE /api/item/<uid>
 
 Item Schemas
 ---------------------------------------

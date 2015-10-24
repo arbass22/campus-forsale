@@ -17,6 +17,7 @@
     "url": "https://github.com/arbass22/campus-forsale/issues"
   },
   "dependencies": {
+    "body-parser": "^1.14.1",
     "express": "~4.13.3"
   }
 }
