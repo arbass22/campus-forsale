@@ -1,12 +1,24 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-var app = express();
-// var router = express.Router();
+var mongoose = require('mongoose');
+var router = express.Router();
 
 var Book = require('./../database/models/book');
 mongoose.connect('mongodb://localhost/books');
+console.log("got into book handler");
 
-app.post('/:id', function(req, res) {
+router.get('/:id', function(req, res) {
+  console.log('called get method');
+  Book.findById(req.params.id, function(err, obj) {
+    if (err)
+      res.json(err);
+    else
+      res.json(obj);
+  });
+});
+
+router.post('/', function(req, res) {
+  console.log("Called the post method");
   var book = new Book(req.body);
   book.save(function(err) {
     if (err)
@@ -15,3 +27,5 @@ app.post('/:id', function(req, res) {
       res.json(book);
   });
 });
+
+module.exports = router;

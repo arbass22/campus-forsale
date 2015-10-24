@@ -18,7 +18,7 @@ app.use(function(err, req, res, next){
 });
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/api/items', ItemHandler);
+//app.use('/api/items', ItemHandler);
 app.use('/api/books', BookHandler);
 
 var server = app.listen(3000, function () {
