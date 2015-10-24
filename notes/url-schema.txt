@@ -12,10 +12,10 @@ Item Schemas
 ---------------------------------------
 Item
 {
-  category: "tickets",
-  owner: "jekennedy@umass.edu",
   title: "ZEDD Floor Seat Ticket",
+  category: "tickets",
   description: "Mint condition floor ticket!",
+  owner: "jekennedy@umass.edu",
   pictures: [list of picture UIDs],
   price: "$40.00",
   condition: "new",
@@ -28,7 +28,9 @@ Book
   author: "Lemony Snicket",
   edition: 1,
   ISBN: 12334565,
+  description: "shit happens to shitty kids"
   owner: "jekennedy@umass.edu",
+  pictures: [list of picture UIDs]
   price: "$69.69"
   condition: "Good",
   available: true
