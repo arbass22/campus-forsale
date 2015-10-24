@@ -1,6 +1,6 @@
 angular.module('app', [])
-  .controller('mainController', function() {
-    var main = this;
+  .controller('indexController', function() {
+    var index = this;
 
-   
+
   });
