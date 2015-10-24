@@ -1,9 +1,9 @@
-angular.module('app')
-  .controller('categoryController', function() {
+angular.module('app.controller.category', [])
+  .controller('categoryController', function($http) {
     var category = this;
-    catergory.items = johnCena;
+    category.items = johnCena;
 
-    category.openItem(item){
+    category.populate = function(){
 
     };
   });
