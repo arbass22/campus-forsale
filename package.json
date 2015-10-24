@@ -1,0 +1,22 @@
+{
+  "name": "campus-forsale",
+  "version": "0.0.0",
+  "description": "HackUMass Fall 2015 Project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arbass22/campus-forsale.git"
+  },
+  "author": "Andrew Bass, Justin Kennedy, Neal Merkl, Jack Nichols",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arbass22/campus-forsale/issues"
+  },
+  "dependencies": {
+    "express": "~4.13.3"
+  }
+}
