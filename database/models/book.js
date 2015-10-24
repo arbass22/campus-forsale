@@ -10,7 +10,8 @@ var bookSchema = mongoose.Schema({
   pictures: [String],
   price: Number,
   condition: String,
-  available: Boolean
+  available: Boolean,
+  views: Number
 });
 
 var Book = mongoose.model('Book', bookSchema);

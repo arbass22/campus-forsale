@@ -8,7 +8,8 @@ var itemSchema = mongoose.Schema({
   price: Number,
   condition: String,
   available: Boolean,
-  pictures: [String]
+  pictures: [String],
+  views: Number
 });
 var Item = mongoose.model('Item', itemSchema);
 module.exports = Item;
