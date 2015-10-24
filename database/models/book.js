@@ -8,7 +8,7 @@ var bookSchema = mongoose.Schema({
   description: String,
   owner: String,
   pictures: [String],
-  price: String,
+  price: Number,
   condition: String,
   available: Boolean
 });
