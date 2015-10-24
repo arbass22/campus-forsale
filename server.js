@@ -3,7 +3,7 @@ var app = express();
 var bodyParser = require('body-parser');
 
 var ItemHandler = require('./routes/ItemHandler');
-var BookHandler = require('./routes/BookHandler');
+var SearchHandler = require('./routes/SearchHandler');
 
 app.use(express.static('public'));
 
@@ -19,7 +19,7 @@ app.use(function(err, req, res, next){
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/api/items', ItemHandler);
-app.use('/api/books', BookHandler);
+app.use('/api/search', SearchHandler);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
