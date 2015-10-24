@@ -13,8 +13,8 @@ router.get('/', function(req, res) {
   console.log("created intial query");
   if (req.query.keywords) {
     console.log("there are keywords");
-    query = query.find({
-      $text : {$search : req.query.keywords},
+    query = Item.find({
+      $text : {$search : req.query.keywords}
     });
   }
   if(req.query.category) {
