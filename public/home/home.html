@@ -2,8 +2,12 @@
   <br><br><br><br>
   <div class="row">
     <div ng-repeat="category in home.categories" class="col-sm-offset-1 col-sm-4">
-      <div class="panel panel-primary">
-        <div class="panel-heading text-center" ng-click="home.openCategory(category.query)">{{category.name}}</div>
+      <div class="panel panel-default">
+        <div class="panel-heading text-center">
+          <a href="#" ng-click="home.openCategory(category.query)">
+            {{category.name}}
+          </a>
+        </div>
         <div class="panel-body">
           <div class="col-sm-5">
             <a href="#" class="thumbnail">
