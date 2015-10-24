@@ -46,4 +46,18 @@ router.delete('/:id', function(req, res) {
   });
 });
 
+router.put('/:id', function(req, res) {
+  mongoose.connect('mongodb://localhost/items');
+
+  Item.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, obj) {
+    if (err) {
+      res.json(err);
+    }
+    else {
+      res.json(obj);
+    }
+    mongoose.disconnect();
+  });
+});
+
 module.exports = router;
