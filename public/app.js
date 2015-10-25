@@ -12,5 +12,8 @@ var app = angular.module('app', ['ngRoute'])
       })
       .when('/create', {
         templateUrl: 'create.html'
+      })
+      .when('/login', {
+        templateUrl: 'login.html'
       });
   }]);
