@@ -21,7 +21,9 @@
         </div>
 
         <div class="panel-body">
-          <img src="{{category.picture}}" class="img-responsive" />
+          <a href='/#/category' ngng-click="main.homePage.openCategory(category.query)">
+            <img src="{{category.picture}}" class="img-responsive" />
+          </a>
         </div>
       </div>
     </div>
