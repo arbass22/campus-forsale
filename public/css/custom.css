@@ -222,10 +222,10 @@ figure:hover figcaption {
     top: 0;
 }
 
-.row-custon{
-  background: #990033;
-}
-
 .jumbotron-custom{
   background-color: #990033;
 }
+
+.other-color{
+    background: #990033;
+  }
