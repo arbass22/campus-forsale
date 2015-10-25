@@ -7,7 +7,7 @@ var Item = require('./../database/models/item');
 console.log("got into item handler");
 
 router.get('/:id', function(req, res) {
-  mongoose.connect('mongodb://localhost:27017/campusforsale');
+  mongoose.connect('mongodb://localhost/campusforsale');
 
   Item.findById(req.params.id, function(err, obj) {
     if (err) {
@@ -21,7 +21,7 @@ router.get('/:id', function(req, res) {
 });
 
 router.post('/', function(req, res) {
-  mongoose.connect('mongodb://localhost:27017/campusforsale');
+  mongoose.connect('mongodb://localhost/campusforsale');
   var item = new Item(req.body);
   item.save(function(err) {
     if (err) {
@@ -35,7 +35,7 @@ router.post('/', function(req, res) {
 });
 
 router.delete('/:id', function(req, res) {
-  mongoose.connect('mongodb://localhost/items');
+  mongoose.connect('mongodb://localhost/campusforsale');
   Item.findByIdAndRemove(req.params.id, function(err, obj) {
     if (err || obj == null) {
       res.send(false);
@@ -48,7 +48,7 @@ router.delete('/:id', function(req, res) {
 });
 
 router.put('/:id', function(req, res) {
-  mongoose.connect('mongodb://localhost/items');
+  mongoose.connect('mongodb://localhost/campusforsale');
 
   Item.findByIdAndUpdate(req.params.id, req.body, {new:true}, function(err, obj) {
     if (err) {
