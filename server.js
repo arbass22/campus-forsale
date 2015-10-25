@@ -61,8 +61,8 @@ app.get('/lmao', function(req, res) {
   res.send('Successfully authenticated');
 });
 
-function isValidPassword(user, password) {
-  return (user.password === password);
+var isValidPassword = function(user, password) {
+    return bCrypt.compareSync(password, user.password);
 }
 
 passport.use('login', new LocalStrategy({
@@ -101,7 +101,7 @@ passport.use('signup', new LocalStrategy({
         } else {
           var newUser = new User();
           newUser.email = username;
-          newUser.password = password;
+          newUser.password = newUser.generateHash(password);
           newUser.save(function(err) {
             if (err){
               throw err;
