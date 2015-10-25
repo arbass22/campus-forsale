@@ -35,8 +35,10 @@ app.controller('mainController', function($http) {
   main.categoryPage.items = johnCena;
 
   main.categoryPage.search = function(query){
+    //changePage
     main.http.get('/api/search/?keywords=' + query).then(
       function onSuccess(res){
+        console.log(res.data);
         main.categoryPage.items = res.data;
       }, function onError(res){
         console.log(res);
@@ -46,6 +48,20 @@ app.controller('mainController', function($http) {
 
   //////////////////////////////////////////////////////////////////////////////
 
+  var obj = main.createPage.object;
+  main.createPage.create = function(obj){
+    main.http.post('/api/items/', {
+      title:obj.title,
+      description:obj.description,
+      category:obj.category,
+      price:obj.price}).then(
+      function onSuccess(res) {
+        window.location = '#/';
+      }, function onError(res) {
+        console.log(res);
+      }
+    );
+  };
 
 });
 

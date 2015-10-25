@@ -4,39 +4,39 @@
     <div class="page-header">
       <h1>Create a Listing</h1>
     </div>
-
-      <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-          Dropdown
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-          <li><a href="#">Action</a></li>
-          <li><a href="#">Another action</a></li>
-          <li><a href="#">Something else here</a></li>
-          <li><a href="#">Separated link</a></li>
-        </ul>
-      </div>
     <form>
       <div class="form-group">
-        <label for="exampleInputEmail1">Title</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="What are you selling?">
+        <label for="inputTitle">Title</label>
+        <input type="text" ng-model="main.createPage.object.title" class="form-control" id="inputTitle" placeholder="What are you selling?">
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Category</label>
+        <div class="dropdown" ng-model="main.createPage.object.category">
+            <select class="form-control" ng-model="main.createPage.object.category" aria-labelledby="dropdownMenu1">
+            <option value="books"><a href="">Books</a></option>
+            <option value="tickets"><a href='#'>Tickets</a></option>
+            <option value="lost"><a href="#">Lost and Found</a></option>
+            <option value="electronics"><a href="#">Electronics</a></option>
+            <option value="automobiles"><a href="#">Automobiles</a></option>
+            <option value="housing"><a href="#">Housing</a></option>
+            <option value="misc"><a href="#">Miscellaneous</a></option>
+          </select>
+        </div>
       </div>
       <div class="form-group">
-        <label for="exampleInputPassword1">Desc</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        <label for="exampleInputPassword1">Description</label>
+        <textarea ng-model="main.createPage.object.description" class="form-control" rows="5" placeholder="Tell us a bit about your item"></textarea>
       </div>
+
+
       <div class="form-group">
-        <label for="exampleInputFile">File input</label>
-        <input type="file" id="exampleInputFile">
-        <p class="help-block">Example block-level help text here.</p>
+        <label for="inputTitle">Price</label>
+        <input type="number" min="0.00" step= "0.01" style="width:150px" ng-model="main.createPage.object.price" class="form-control" id="inputTitle" placeholder="$">
       </div>
-      <div class="checkbox">
-        <label>
-          <input type="checkbox"> Check me out
-        </label>
-      </div>
-      <button type="submit" class="btn btn-default">Submit</button>
+
+      <button type="submit" ng-click="main.createPage.create(main.createPage.object)" class="btn btn-default">Submit</button>
+
 </form>
   </div>
 </div>
