@@ -1,0 +1,37 @@
+REST Endpoints
+---------------------------------------
+GET /api/item?category=tickets?price=$40.00
+POST /api/item or /api/book
+PUT /api/item/<uid> or /api/book/<uid>
+  {
+    fieldToChange: "newValue"
+  }
+DELETE /api/item/<uid>
+
+Item Schemas
+---------------------------------------
+Item
+{
+  title: "ZEDD Floor Seat Ticket",
+  category: "tickets",
+  description: "Mint condition floor ticket!",
+  owner: "jekennedy@umass.edu",
+  pictures: [list of picture UIDs],
+  price: "$40.00",
+  condition: "new",
+  available: true
+}
+
+Book
+{
+  title: "A Series of Unfortunate Events",
+  author: "Lemony Snicket",
+  edition: 1,
+  ISBN: 12334565,
+  description: "shit happens to shitty kids"
+  owner: "jekennedy@umass.edu",
+  pictures: [list of picture UIDs]
+  price: "$69.69"
+  condition: "Good",
+  available: true
+}
