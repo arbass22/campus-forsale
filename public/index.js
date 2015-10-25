@@ -21,7 +21,6 @@ app.controller('mainController', function($http) {
   main.homePage.openCategory = function(category){
     main.http.get('/api/search/?category=' + category).then(
       function onSuccess(res){
-        console.log(res);
         main.categoryPage.items = res.data;
       }, function onError(res){
         console.log(res);
@@ -29,9 +28,21 @@ app.controller('mainController', function($http) {
     );
   };
 
+
+
   //////////////////////////////////////////////////////////////////////////////
 
   main.categoryPage.items = johnCena;
+
+  main.categoryPage.search = function(query){
+    main.http.get('/api/search/?title=' + query).then(
+      function onSuccess(res){
+        main.categoryPage.items = res.data;
+      }, function onError(res){
+        console.log(res);
+      }
+    );
+  };
 
   //////////////////////////////////////////////////////////////////////////////
 
