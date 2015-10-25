@@ -19,7 +19,7 @@ app.controller('mainController', function($http) {
     {name: 'Miscellaneous', query: 'misc', picture: 'assetts/misc.png'}];
 
   main.homePage.openCategory = function(category){
-    main.http.get('/api/search/?category=' + category).then(
+    main.http.get('campusforsale.cloudapp.net/api/search/?category=' + category).then(
       function onSuccess(res){
         main.categories.items = res.data;
       }, function onError(res){
