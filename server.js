@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-var passport = require('passport'), LocalStrategy = require('passport-local').Strategy;
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var ItemHandler = require('./routes/ItemHandler');
 var SearchHandler = require('./routes/SearchHandler');
@@ -21,29 +22,75 @@ app.use(function(err, req, res, next){
 });
 app.use(bodyParser.urlencoded({extended: false}));
 
-
+// Middleware for passport-authentication
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.post('/login', passport.authenticate('local', { successRedirect: '/',
-                                                    failureRedirect: '/login',
-                                                    failureFlash: true }));
+passport.serializeUser(function(user, done) {
+  done(null, user._id);
+});
 
-passport.use(new LocalStrategy(
-  function(username, password, done) {
-    User.findOne({ username: username }, function(err, user) {
-      if (err) { return done(err); }
-      if (!user) {
-        return done(null, false, { message: 'Incorrect username.' });
-      }
-      if (!user.validPassword(password)) {
-        return done(null, false, { message: 'Incorrect password.' });
-      }
-      return done(null, user);
-    });
-  }
-));
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function(err, user) {
+    done(err, user);
+  });
+});
 
+app.get('/api/login', function(req, res) {
+  res.sendfile('public/login.html');
+});
+
+app.post('/api/login', passport.authenticate('login', {
+    successRedirect : '/api/loginSuccess',
+    failureRedirect : '/api/loginFailure'
+}));
+
+passport.use('login', new LocalStrategy({
+    passReqToCallback : true
+  },
+  function(req, username, password, done) {
+    User.findOne({ 'email' :  username },
+      function(err, user) {
+        if (err)
+          return done(err);
+        if (!user){
+           return done(null, false, { message: 'Incorrect username.' });
+        }
+        if (!isValidPassword(user, password)){
+          return done(null, false, { message: 'Incorrect password.' });
+        }
+        return done(null, user);
+      }
+    );
+}));
+
+passport.use('signup', new LocalStrategy({
+    passReqToCallback : true
+  },
+  function(req, username, password, done) {
+    findOrCreateUser = function(){
+      User.findOne({'email':username},function(err, user) {
+        if (err){
+          return done(err);
+        }
+        if (user) {
+          return done(null, false, { message: 'User already exists' });
+        } else {
+          var newUser = new User();
+          newUser.email = username;
+          newUser.password = password;
+          newUser.save(function(err) {
+            if (err){
+              throw err;
+            }
+            return done(null, newUser);
+          });
+        }
+      });
+    };
+    process.nextTick(findOrCreateUser);
+  })
+);
 
 app.use('/api/items', ItemHandler);
 app.use('/api/search', SearchHandler);

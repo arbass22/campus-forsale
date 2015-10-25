@@ -8,5 +8,5 @@ var userSchema = new mongoose.Schema({
   verified: Boolean
 });
 
-var User = mongoose.model('User', itemSchema);
+var User = mongoose.model('User', userSchema);
 module.exports = User;
