@@ -46,6 +46,11 @@ app.controller('mainController', function($http) {
     );
   };
 
+  main.categoryPage.openItem = function(item){
+    console.log(item);
+    main.itemPage.object = item;
+  };
+
   //////////////////////////////////////////////////////////////////////////////
 
   var obj = main.createPage.object;
@@ -63,6 +68,16 @@ app.controller('mainController', function($http) {
     );
   };
 
+  //////////////////////////////////////////////////////////////////////////////
+
+  main.itemPage.object = {};
+
 });
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////
 
 var johnCena = [{title: "MOBY DICK", price: "$40.00"},{title: "ISHMAEL", price: "$50.00"}];
