@@ -70,11 +70,8 @@ passport.use('login', new LocalStrategy({
   },
   function(req, username, password, done) {
     //mongoose.connect('mongodb://localhost/campusforsale');
-    var oy = User.findOne({ 'email' :  username },
+    User.findOne({ 'email' :  username },
       function(err, user) {
-        console.log('check ' + username);
-        console.log('check ' + password);
-        console.log('check ' + oy.email);
         if (err)
           return done(err);
         if (!user){
