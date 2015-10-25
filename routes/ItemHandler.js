@@ -11,7 +11,8 @@ router.get('/:id', function(req, res) {
 
   Item.findById(req.params.id, function(err, obj) {
     if (err) {
-      res.json(err);
+      res.status(404);
+      res.send(err.message());
     }
     else {
       res.json(obj);
