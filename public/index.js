@@ -56,7 +56,7 @@ app.controller('mainController', function($http) {
       category:obj.category,
       price:obj.price}).then(
       function onSuccess(res) {
-        $window.location.href = '/api/items/res.object.id';
+        window.location = '#/';
       }, function onError(res) {
         console.log(res);
       }
