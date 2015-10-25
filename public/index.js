@@ -48,6 +48,16 @@ app.controller('mainController', function($http) {
 
   //////////////////////////////////////////////////////////////////////////////
 
+  main.createPage.object = {}
+  main.createPage.create = function(main.createPage.object){
+    main.http.post('/api/items/').then(
+      function onSuccess(res) {
+        $window.location.href = '/api/items/res.object.id';
+      }, function onError(res) {
+        console.log(res);
+      }
+    );
+  };
 
 });
 
