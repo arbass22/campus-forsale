@@ -6,7 +6,7 @@ var router = express.Router();
 var Item = require('./../database/models/item');
 
 router.get('/', function(req, res) {
-  mongoose.connect('mongodb://localhost/items');
+  mongoose.connect('mongodb://localhost:27017/campusforsale');
 
   console.log("entered search endpoint");
   var query = Item.find({});
