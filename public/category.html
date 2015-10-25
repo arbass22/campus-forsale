@@ -9,20 +9,22 @@
 
   <div class="row">
     <div ng-repeat="item in main.categoryPage.items" class="col-sm-6">
-      <div class="panel panel-default" ng-click="main.categoryPage.openItem(item)">
-        <div class="panel-heading text-center">
+      <a href="">
+        <div class="panel panel-default" ng-click="main.categoryPage.openItem(item)">
+          <div class="panel-heading text-center">
             {{item.title}}
-        </div>
-        <div class="panel-body">
-          <div class="row text-center">
-            <div class="image-container">
-                  <img ng-src={{item.pictures[0]}} />
-          <div class="row text-center">
-              <h3>Price: {{item.price}}</h3>
+          </div>
+          <div class="panel-body">
+            <div class="row text-center">
+              <div class="image-container">
+                <img ng-src={{item.pictures[0]}} />
+                <div class="row text-center">
+                  <h3>Price: {{item.price}}</h3>
+                </div>
+              </div>
+            </div>
+            <br><br><br><br>
           </div>
         </div>
+      </a>
       </div>
-      <br><br><br><br>
-    </div>
-  </div>
-</div>
