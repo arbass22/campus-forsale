@@ -23,7 +23,8 @@ router.get('/', function(req, res) {
   }
   query.exec(function(err, items) {
     if (err) {
-      res.json(err);
+      res.status(400);
+      res.send(err.message);
     } else {
       res.json(items);
     }

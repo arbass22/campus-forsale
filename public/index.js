@@ -35,10 +35,10 @@ app.controller('mainController', function($http) {
   main.categoryPage.items = johnCena;
 
   main.categoryPage.search = function(query){
-    //changePage
+    window.location = '#/category';
     main.http.get('/api/search/?keywords=' + query).then(
       function onSuccess(res){
-        console.log(res.data);
+        console.log(res);
         main.categoryPage.items = res.data;
       }, function onError(res){
         console.log(res);
