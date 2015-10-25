@@ -1,7 +1,7 @@
 <div class="container">
   <br><br><br><br><br><br>
-
-    <div ng-repeat="category in main.homePage.categories" class="col-sm-offset-1 col-sm-5">
+  <div class="row">
+    <div ng-repeat="category in main.homePage.categories" class="col-sm-6">
       <div class="panel panel-default">
         <div class="panel-heading text-center">
           <a href="/#/category" ng-click="main.homePage.openCategory(category.query)">
@@ -13,7 +13,6 @@
           <img src="{{category.picture}}"/>
         </div>
       </div>
-      <br><br>
     </div>
   </div>
 </div>
