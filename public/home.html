@@ -1,10 +1,10 @@
-<div ng-controller="homeController as home" class="container">
+<div class="container">
   <br><br><br><br><br><br>
 
-    <div ng-repeat="category in home.categories" class="col-sm-offset-1 col-sm-4">
-      <div class="panel panel-custom">
+    <div ng-repeat="category in main.homePage.categories" class="col-sm-offset-1 col-sm-4">
+      <div class="panel panel-default">
         <div class="panel-heading text-center">
-          <a href="#" ng-click="home.openCategory(category.query)">
+          <a href="/#/category" ng-click="main.homePage.openCategory(category.query)">
             <h3 class="panel-title">{{category.name}}</h3>
           </a>
         </div>
