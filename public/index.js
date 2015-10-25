@@ -63,7 +63,7 @@ app.controller('mainController', function($http) {
     main.http.post('/api/items/', {
       title:obj.title,
       description:obj.description,
-      pictures:[obj.pictures],
+      pictures:[obj.picture],
       category:obj.category,
       price:obj.price}).then(
       function onSuccess(res) {
