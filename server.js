@@ -1,5 +1,9 @@
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/campusforsale');
+
 var express = require('express');
 var app = express();
+
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
@@ -41,24 +45,36 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', passport.authenticate('login', {
-    successRedirect : '/loginSuccess',
-    failureRedirect : '/loginFailure'
+    successRedirect : '/lmao',
+    failureRedirect : '/no'
 }));
 
-app.get('/loginFailure', function(req, res, next) {
+app.get('/signup', function(req, res) {
+  res.sendfile('public/signup.html');
+});
+
+app.get('/no', function(req, res) {
   res.send('Failed to authenticate');
 });
 
-app.get('/loginSuccess', function(req, res, next) {
+app.get('/lmao', function(req, res) {
   res.send('Successfully authenticated');
 });
+
+function isValidPassword(user, password) {
+  return (user.password === password);
+}
 
 passport.use('login', new LocalStrategy({
     passReqToCallback : true
   },
   function(req, username, password, done) {
-    User.findOne({ 'email' :  username },
+    //mongoose.connect('mongodb://localhost/campusforsale');
+    var oy = User.findOne({ 'email' :  username },
       function(err, user) {
+        console.log('check ' + username);
+        console.log('check ' + password);
+        console.log('check ' + oy.email);
         if (err)
           return done(err);
         if (!user){
@@ -70,6 +86,7 @@ passport.use('login', new LocalStrategy({
         return done(null, user);
       }
     );
+    //mongoose.disconnect();
 }));
 
 passport.use('signup', new LocalStrategy({
@@ -77,6 +94,7 @@ passport.use('signup', new LocalStrategy({
   },
   function(req, username, password, done) {
     findOrCreateUser = function(){
+      //mongoose.connect('mongodb://localhost:27017/campusforsale');
       User.findOne({'email':username},function(err, user) {
         if (err){
           return done(err);
@@ -95,6 +113,7 @@ passport.use('signup', new LocalStrategy({
           });
         }
       });
+      //mongoose.disconnect();
     };
     process.nextTick(findOrCreateUser);
   })

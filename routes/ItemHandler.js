@@ -24,7 +24,7 @@ router.post('/', function(req, res) {
   mongoose.connect('mongodb://localhost/campusforsale');
 
   var item = new Item(req.body);
-  item.save(function(err) {
+  Item.save(function(err) {
     if (err) {
       res.json(err);
     }
