@@ -36,14 +36,22 @@ passport.deserializeUser(function(id, done) {
   });
 });
 
-app.get('/api/login', function(req, res) {
+app.get('/login', function(req, res) {
   res.sendfile('public/login.html');
 });
 
-app.post('/api/login', passport.authenticate('login', {
-    successRedirect : '/api/loginSuccess',
-    failureRedirect : '/api/loginFailure'
+app.post('/login', passport.authenticate('login', {
+    successRedirect : '/loginSuccess',
+    failureRedirect : '/loginFailure'
 }));
+
+app.get('/loginFailure', function(req, res, next) {
+  res.send('Failed to authenticate');
+});
+
+app.get('/loginSuccess', function(req, res, next) {
+  res.send('Successfully authenticated');
+});
 
 passport.use('login', new LocalStrategy({
     passReqToCallback : true
@@ -92,8 +100,8 @@ passport.use('signup', new LocalStrategy({
   })
 );
 
-app.use('/api/items', ItemHandler);
-app.use('/api/search', SearchHandler);
+app.use('/items', ItemHandler);
+app.use('/search', SearchHandler);
 
 var server = app.listen(3000, function () {
   var host = server.address().address;
