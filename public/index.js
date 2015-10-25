@@ -37,5 +37,5 @@ app.controller('mainController', function($http) {
 
 });
 
-var johnCena = [{name: "You're", query: ""},{name: "time", query: ""},{name: "is", query: ""},{name: "up", query: ""},
-{name: "you're", query: ""},{name: "time", query: ""},{name: "is", query: ""},{name: "now", query: ""}];
+var johnCena = [{title: "You're", query: ""},{title: "time", query: ""},{title: "is", query: ""},{title: "up", query: ""},
+{title: "you're", query: ""},{title: "time", query: ""},{title: "is", query: ""},{title: "now", query: ""}];
