@@ -1,20 +1,16 @@
-angular.module('app', ['ngRoute', 'app.controller.home', 'app.controller.category', 'app.controller.item'])
+var app = angular.module('app', ['ngRoute'])
   .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
     $routeProvider
       .when('/', {
-        templateUrl: 'home/home.html',
-        controller: 'homeController',
-        controllerAs: 'home'
+        templateUrl: 'home.html'
       })
       .when('/category', {
-        templateUrl: 'category/category.html',
-        controller: 'categoryController',
-        controllerAs: 'category'
+        templateUrl: 'category.html'
       })
       .when('/item', {
-        templateUrl: 'item/item.html',
-        controller: 'itemController',
-        controllerAs: 'item'
+        templateUrl: 'item.html'
+      })
+      .when('/create', {
+        templateUrl: 'create.html'
       });
-
   }]);
