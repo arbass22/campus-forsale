@@ -210,6 +210,11 @@ figure:hover figcaption {
     position: relative;
 }
 
+.image-container-custom img {
+    max-height: 300px;
+    position: relative;
+}
+
 .image-container p {
     white-space: nowrap;
     width: 100%;
