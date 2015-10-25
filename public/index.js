@@ -9,12 +9,14 @@ app.controller('mainController', function($http) {
 
   //////////////////////////////////////////////////////////////////////////////
 
-  main.homePage.categories = [{name: 'Books', query: 'books', picture: 'assetts/books'}, {name: 'Event Tickets', query: 'eventtickets', picture: 'assetts/eventtickets'},
-    {name: 'Furniture', query: 'furniture', picture: 'assetts/furniture'}, {name: 'Clothing', query: 'clothing', picture: 'assetts/clothing'},
-    {name: 'Lost and Found', query: '', picture: 'assetts/lostandfound'}, {name: 'Rides', query: '', picture: 'assetts/rides'},
-    {name: 'Electronics', query: 'electronics', picture: 'assetts/electronics'}, {name: 'Dorm Supplies', query: 'dorm', picture: 'assetts/dormsupplies'},
-    {name: 'Automobiles', query: 'auto', picture: 'assetts/automobiles'}, {name: 'Housing', query: 'housing', picture: 'assetts/housing'},
-    {name: 'Miscellaneous', query: 'misc', picture: 'assetts/misc'}, {name: "Jobs", query: 'jobs', picture: 'assetts/jobs'}];
+  main.homePage.categories = [{name: 'Books', query: 'books', picture: 'assetts/books.png'},
+    {name: 'Event Tickets', query: 'eventtickets', picture: 'assetts/eventtickets.png'},
+    {name: 'Furniture', query: 'furniture', picture: 'assetts/furniture.png'},
+    {name: 'Lost and Found', query: '', picture: 'assetts/lostandfound.png'},
+    {name: 'Electronics', query: 'electronics', picture: 'assetts/electronics.png'},
+    {name: 'Automobiles', query: 'auto', picture: 'assetts/automobiles.png'},
+    {name: 'Housing', query: 'housing', picture: 'assetts/housing.png'},
+    {name: 'Miscellaneous', query: 'misc', picture: 'assetts/misc.png'}];
 
   main.homePage.openCategory = function(category){
     main.http.get('/api/search/?category=' + category).then(
