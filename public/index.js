@@ -48,9 +48,13 @@ app.controller('mainController', function($http) {
 
   //////////////////////////////////////////////////////////////////////////////
 
-  main.createPage.object = {}
-  main.createPage.create = function(main.createPage.object){
-    main.http.post('/api/items/').then(
+  var obj = main.createPage.object;
+  main.createPage.create = function(obj){
+    main.http.post('/api/items/', {
+      title:obj.title,
+      description:obj.description,
+      category:obj.category,
+      price:obj.price}).then(
       function onSuccess(res) {
         $window.location.href = '/api/items/res.object.id';
       }, function onError(res) {
