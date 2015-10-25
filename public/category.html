@@ -1,4 +1,5 @@
 <div class="container">
+<<<<<<< HEAD
   <br><br><br><br>
   <div class="row">
     <div ng-repeat="item in main.categoryPage.items" class="col-sm-6">
@@ -17,8 +18,22 @@
           <div class="row text-center">
               <h3>Price: {{item.price}}</h3>
           </div>
+=======
+    <div ng-repeat="item in main.categoryPage.items">
+      <div class="row">
+         <div class="col-sm-6 portfolio-item">
+          <a href="/#/item"  ng-click="main.categoryPage.openItem(item)">
+            <div class="image-container">
+                  <img alt="" src="http://www.gettyimages.co.uk/gi-resources/images/Homepage/Hero/UK/CMS_Creative_164657191_Kingfisher.jpg">
+            </div>
+          </a>
         </div>
-      </div>
+        <div class="col-sm-6">
+          Title: {{item.title}}<br><br>
+          Description: {{item.description}}<br><br><br><br>
+          Price: {{item.price}}
+>>>>>>> i love temps
+        </div>
     </div>
   </div>
 </div>

@@ -164,6 +164,7 @@ figure figcaption {
 
 figure {
   display: inline-block;
+  border:1px solid grey;
   position: relative;
   overflow:hidden;
 }
@@ -193,7 +194,6 @@ figcaption {
   transition: bottom 0.5s ease;
 }
 
-
 figure:hover figcaption {
   bottom:0;
 }
@@ -206,6 +206,7 @@ figure:hover figcaption {
 }
 
 .image-container img {
+    height: 150px;
     position: relative;
 }
 

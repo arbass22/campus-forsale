@@ -1,31 +1,45 @@
 <div class="container">
-  <br><br><br><br><br><br>
-  <div class="container header-bg">
-    <div class="jumbotron">
+    <header>
       <div class="container">
-        <img src="assetts/building.png">
-        <h1>Welcome to Campus For Sale</h1>
-        <p>This is a site dedicated to buying and selling across the UMass campus</p>
-      </div>
-    </div>
-</div>
-
-
-  <div class="row">
-    <div ng-repeat="category in main.homePage.categories" class="col-sm-6">
-      <div class="panel panel-default" style="border-width:5px border-color:darkgray">
-        <div class="panel-heading text-center" style="background-color:maroon">
-          <a href="/#/category" style="color: white" ng-click="main.homePage.openCategory(category.query)">
-            <h3 class="panel-title">{{category.name}}</h3>
-          </a>
+        <div class="row">
+          <div class="col-lg-12">
+            <img class="img-responsive" src="Freelancer/img/building.png" alt="">
+              <div class="intro-text">
+                <span class="name">Welcome to Campus for Sale at UMass</span>
+                <hr class="star-light">
+                <span class="skills">A local site dedicated to finding you the best deals</span>
+              </div>
+            </div>
+          </div>
         </div>
+    </header>
+    <br><br>
 
-        <div class="panel-body">
-          <a href='/#/category' ng-click="main.homePage.openCategory(category.query)">
-            <img src="{{category.picture}}" class="img-responsive" />
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+    <section id="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2>Categories</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+              <div ng-repeat="category in main.homePage.categories">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="/#/category" style="color: white" ng-click="main.homePage.openCategory(category.query)">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <figure>
+                          <img src="{{category.picture}}" class="img-responsive" />
+                          <figcaption>{{category.name}}</figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+              </div>
+            </div>
+          </div>
+    </section>

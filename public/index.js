@@ -58,6 +58,7 @@ app.controller('mainController', function($http) {
     main.http.post('/api/items/', {
       title:obj.title,
       description:obj.description,
+      pictures:[obj.pictures],
       category:obj.category,
       price:obj.price}).then(
       function onSuccess(res) {
