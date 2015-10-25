@@ -1,7 +1,7 @@
 <div class="container">
   <br><br><br><br><br><br>
-  <div class="container header-bg header-custom">
-    <div class="jumbotron jumbotron-custom">
+  <div class="container header-bg">
+    <div class="jumbotron">
       <div class="container">
         <img src="assetts/building.png">
         <h1>Welcome to Campus For Sale</h1>
@@ -13,15 +13,15 @@
 
   <div class="row">
     <div ng-repeat="category in main.homePage.categories" class="col-sm-6">
-      <div class="panel panel-default">
-        <div class="panel-heading text-center">
-          <a href="/#/category" ng-click="main.homePage.openCategory(category.query)">
+      <div class="panel panel-default" style="border-width:5px border-color:darkgray">
+        <div class="panel-heading text-center" style="background-color:maroon">
+          <a href="/#/category" style="color: white" ng-click="main.homePage.openCategory(category.query)">
             <h3 class="panel-title">{{category.name}}</h3>
           </a>
         </div>
 
         <div class="panel-body">
-          <a href='/#/category' ngng-click="main.homePage.openCategory(category.query)">
+          <a href='/#/category' ng-click="main.homePage.openCategory(category.query)">
             <img src="{{category.picture}}" class="img-responsive" />
           </a>
         </div>
