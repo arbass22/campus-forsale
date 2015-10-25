@@ -19,9 +19,10 @@ app.controller('mainController', function($http) {
     {name: 'Miscellaneous', query: 'misc', picture: 'assetts/misc.png'}];
 
   main.homePage.openCategory = function(category){
-    main.http.get('campusforsale.cloudapp.net/api/search/?category=' + category).then(
+    main.http.get('/api/search/?category=' + category).then(
       function onSuccess(res){
-        main.categories.items = res.data;
+        console.log(res);
+        main.categoryPage.items = res.data;
       }, function onError(res){
         console.log(res);
       }
@@ -37,5 +38,4 @@ app.controller('mainController', function($http) {
 
 });
 
-var johnCena = [{title: "You're", query: ""},{title: "time", query: ""},{title: "is", query: ""},{title: "up", query: ""},
-{title: "you're", query: ""},{title: "time", query: ""},{title: "is", query: ""},{title: "now", query: ""}];
+var johnCena = [{title: "MOBY DICK", price: "$40.00"},{title: "ISHMAEL", price: "$50.00"}];
