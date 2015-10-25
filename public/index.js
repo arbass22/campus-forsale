@@ -37,7 +37,7 @@ app.controller('mainController', function($http) {
 
   main.categoryPage.search = function(query){
     window.location = '#/category';
-    main.categoryPage.category = 'Results containing:' + query;
+    main.categoryPage.category = 'Results containing: ' + query;
     main.http.get('/api/search/?keywords=' + query).then(
       function onSuccess(res){
         console.log(res);
@@ -47,6 +47,8 @@ app.controller('mainController', function($http) {
       }
     );
   };
+
+  main.categoryPage.category = "Category";
 
   main.categoryPage.openItem = function(item){
     console.log(item);
