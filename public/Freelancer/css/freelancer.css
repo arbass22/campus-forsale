@@ -184,6 +184,12 @@ section.success {
     background:   background-color: #990033;
 }
 
+section2.success {
+    color: #990033;
+    text-align: center;
+    background:   background-color: grey;
+}
+
 section.success a,
 section.success a:hover,
 section.success a:focus,
@@ -267,16 +273,15 @@ section.success a.active {
     font-size: 20px;
     color: #fff;
     background: 0 0;
-    transition: all .3s ease-in-out;
 }
 
 .btn-outline:hover,
 .btn-outline:focus,
 .btn-outline:active,
 .btn-outline.active {
-    border: solid 2px #fff;
-    color: #18bc9c;
-    background: #fff;
+    border: solid 2px #990033;;
+    color: white;
+    background: #990033;;
 }
 
 .floating-label-form-group {

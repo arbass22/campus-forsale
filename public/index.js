@@ -19,6 +19,7 @@ app.controller('mainController', function($http) {
     {name: 'Miscellaneous', query: 'misc', picture: 'assetts/misc.png'}];
 
   main.homePage.openCategory = function(category){
+    main.categoryPage.category = category;
     main.http.get('/api/search/?category=' + category).then(
       function onSuccess(res){
         main.categoryPage.items = res.data;
@@ -36,6 +37,7 @@ app.controller('mainController', function($http) {
 
   main.categoryPage.search = function(query){
     window.location = '#/category';
+    main.categoryPage.category = 'Results containing:' + query;
     main.http.get('/api/search/?keywords=' + query).then(
       function onSuccess(res){
         console.log(res);

@@ -1,19 +1,35 @@
 <div class="container">
-  <br><br><br><br>
-  <div class="row">
-    <div class="well text-center">
-      <h2>{{main.itemPage.object.title}}</h2>
-    </div>
-  </div>
-  <div class="row text-center">
-    <img src="{{main.itemPage.object.picture}}" />
-  </div>
-  <div class="row text-center">
-    <p>Price: {{main.itemPage.object.price}}</p>
-    <p>Description: {{main.itemPage.object.description}}</p>
-    <p>
-  </div>
-  <div class="row text-center">
-    <btn type="btn" class="btn btn-primary btn-lg" ng-click="">CONTACT</btn>
-  </div>
+  <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="intro-text">
+                        <span class="name">{{main.itemPage.object.title}}</span>
+                        <span class="skills">Price: {{main.itemPage.object.price}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+  <img ng-src={{item.pictures[0]}} />
+
+  <section2 class="success" id="about">
+        <div class="container">
+            <div class="row " align="center">
+                <div class="col-lg-12 text-center" align="center">
+                    <h2>Product Description</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div>
+                    <p>{{main.itemPage.object.description}}</p>
+                </div>
+                <div class="row text-center">
+                  <btn type="btn" class="btn btn-primary btn-lg" ng-click="">CONTACT</btn>
+                </div>
+            </div>
+        </div>
+    </section>
+
 </div>
