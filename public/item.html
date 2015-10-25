@@ -1,3 +1,11 @@
+<html>
+  <head>
+      <link rel="stylesheet" type="text/css" href="/feedback-modal-window/feedback-modal-window.css">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+      <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"> </script>
+      <script type="text/javascript" src="js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="feedback-modal-window/feedback-modal-window.js"></script>
+    </head>
 <div class="container">
   <header>
         <div class="container">
@@ -12,10 +20,8 @@
         </div>
     </header>
 
-  <div align="center">  
-    <img ng-src={{item.pictures[0]}} />
-  </div>
-
+    <img ng-src={{main.itemPage.object.pictures[0]}}/>
+>>>>>>> 76600710b2775bf32bc60f65cddc748d45881031
   <section2 class="success" id="about">
         <div class="container">
             <div class="row " align="center">
@@ -27,11 +33,40 @@
                 <div>
                     <p>{{main.itemPage.object.description}}</p>
                 </div>
-                <div class="row text-center">
-                  <btn type="btn" class="btn btn-primary btn-lg" ng-click="">CONTACT</btn>
-                </div>
+
+
+
+
             </div>
         </div>
     </section>
 
+
+    <p style="text-align: center;"><button id="modal_open" onclick="modal_init()">Open Email Form</button></p>
+    <br><br>
+    <div id="modal_wrapper">
+    <div id="modal_window">
+
+    <div style="text-align: right;"><a id="modal_close" >close <b>X</b></a></div>
+
+    <p>Complete the form below to send an email:</p>
+
+    <form id="modal_feedback" method="POST" action="#" accept-charset="UTF-8">
+    <p><label>Your Name<strong>*</strong><br>
+    <input type="text" autofocus required size="40" name="name" value=""></label></p>
+    <p><label>Email Address<strong>*</strong><br>
+    <input type="email" required title="Please enter a valid email address" size="40" name="email" value=""></label></p>
+    <p><label>Subject<br>
+    <input type="text" size="40" name="subject" value=""></label></p>
+    <p><label>Enquiry<strong>*</strong><br>
+    <textarea required name="message" cols="40" rows="8"></textarea></label></p>
+    <p><input type="submit" name="feedbackForm" value="Send Message"></p>
+    </form>
+
+    </div> <!-- #modal_window -->
+    </div> <!-- #modal_wrapper -->
+
+    <script type="text/javascript" src="feedback-modal-window/feedback-modal-window.js"></script>
+
 </div>
+</html>

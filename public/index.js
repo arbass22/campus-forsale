@@ -53,6 +53,7 @@ app.controller('mainController', function($http) {
   main.categoryPage.openItem = function(item){
     console.log(item);
     main.itemPage.object = item;
+    window.location = '#/item'
   };
 
   //////////////////////////////////////////////////////////////////////////////
