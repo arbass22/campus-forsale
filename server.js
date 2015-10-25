@@ -45,19 +45,19 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/login', passport.authenticate('login', {
-    successRedirect : '/lmao',
-    failureRedirect : '/no'
+    successRedirect : '/',
+    failureRedirect : '/failLogin'
 }));
 
 app.get('/signup', function(req, res) {
   res.sendfile('public/signup.html');
 });
 
-app.get('/no', function(req, res) {
-  res.send('Failed to authenticate');
+app.get('/sucLogin', function(req, res) {
+  res.sendfile('public/home.html');
 });
 
-app.get('/lmao', function(req, res) {
+app.get('/failLogin', function(req, res) {
   res.send('Successfully authenticated');
 });
 
