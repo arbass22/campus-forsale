@@ -1,29 +1,19 @@
 <!doctype html>
-<html ng-app="app">
+<html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<<<<<<< HEAD
-    <script src="index.js"></script>
-    <script src="home/home.js"></script>
-    <script src="category/category.js"></script>
-    <script src="item/item.js"></script>
-=======
     <script src="app.js"></script>
     <script src="index.js"></script>
->>>>>>> huge restructure
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>UMass Campus For Sale</title>
   </head>
 
-<<<<<<< HEAD
-  <body ng-controller="indexController as index">
-=======
   <body ng-app="app" ng-controller="mainController as main">
->>>>>>> huge restructure
 
     <div>
       <nav class="navbar navbar-inverse navbar-fixed-top navbar-custom">
@@ -66,26 +56,8 @@
       </nav>
     </div>
 
-
-
-
-
-
-
-
-
-
-    <div ng-include src="'home/home.html'" ng-show="index.page == 'home'">
-
-    </div>
-
-    <div ng-include src="'category/category.html'" ng-show="index.page == 'category'">
-
-    </div>
-
-    <div ng-include src="'item/item.html'" ng-show="index.page == 'item'">
-
-    </div>
+    <div ng-view></div>
 
   </body>
+
 </html>

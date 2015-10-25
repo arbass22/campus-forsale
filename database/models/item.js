@@ -15,5 +15,6 @@ var itemSchema = mongoose.Schema({
   views: Number
 });
 itemSchema.index({title: 'text', description: 'text', author: 'text', isbn: 'number'});
+
 var Item = mongoose.model('Item', itemSchema);
 module.exports = Item;
